@@ -1,0 +1,90 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    ;
+}
+body{
+    background-image: url(data/ff88e826-c44a-4336-bbe0-a80b97da7694.jfif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.title {
+    padding: 20px;
+    padding-right: 40px;
+    padding-left: 40px;
+    background-color: rgb(231, 236, 238);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    height: 40px;
+    font-size: 25px;
+
+}
+
+.box1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.box1 img {
+    height: 70px;
+    border-radius: 100%;
+}
+
+.box2 ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 20px;
+    list-style: none;
+}
+
+.box2 ul li a {
+    text-decoration: none;
+    color: black;
+}
+main {
+    padding-top: 250px;
+    flex: 1; /* tự động chiếm phần còn lại */
+    background-color: rgba(255, 255, 255, 0);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.main_box1 h1 {
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-family: 'Poppins', sans-serif;
+}
+
+.chon button {
+    padding: 15px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff5555;
+    color: white;
+    transition: 0.3s;
+}
+
+.chon button:hover {
+    background-color: #ff2222;
+}
+.chon button a{
+    text-decoration: none;
+    color: white;
+}

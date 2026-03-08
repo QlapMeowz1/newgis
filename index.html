@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bản đồ quán ăn</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ol@latest/ol.css">
+    <script src="https://cdn.jsdelivr.net/npm/ol@latest/dist/ol.js"></script>
+    <script src="https://kit.fontawesome.com/9db1097153.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="title">
+        <h1>BẢN ĐỒ QUÁN ĂN</h1>
+    </div>
+    <div class="container">
+        <!-- Bản đồ -->
+        <div id="map"></div>
+
+        <!-- Thanh bên phải -->
+        <div class="sidebar">
+            <div class="searchFE">
+                <input type="text" id="searchBar" placeholder="Tìm kiếm quán ăn" class="search-input" oninput="search()">
+                <ul id="searchResults" class="search-results"></ul>
+                <i class="fa-solid fa-magnifying-glass search-icon" id="searchIcon"></i>  
+            </div>
+    
+            <!-- Các lựa chọn bật/tắt lớp bản đồ -->
+            <div class="layer-controls">
+                <label for="kfc-layer">
+                    <input type="checkbox" id="kfc-layer" checked>
+                    <img src="data/kfc.png" alt="KFC" class="checkbox-image-kfc">
+                </label>
+                
+                <label for="lotte-layer">
+                    <input type="checkbox" id="lotte-layer" checked>
+                    <img src="data/lotteria-logo.jpg" alt="Lotte" class="checkbox-image-lotteria">
+                </label>
+                
+                <label for="jollibee-layer">
+                    <input type="checkbox" id="jollibee-layer" checked>
+                    <img src="data/z4283261805031_602f2b0f9c0f1ab9bb9f5d145233b779-750x468.jpg" alt="Jollibee" class="checkbox-image-jollibee">
+                </label>
+            </div>
+            
+        </div>
+    </div>
+    <!-- Popup thông tin quán ăn -->
+    <div id="popup" class="popup"></div>
+    <script src="script.js"></script>
+    <script src="search.js"></script>
+</body>
+</html>
