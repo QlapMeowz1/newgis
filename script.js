@@ -1,4 +1,4 @@
-// Khởi tạo bản đồ OpenLayers
+
 const map = new ol.Map({
     target: 'map',
     layers: [
@@ -12,7 +12,7 @@ const map = new ol.Map({
     })
 });
 
-// Hàm tạo layer từ GeoJSON
+// lay layerGeoJSON
 async function createLayer(sourceUrl, color) {
     try {
         let response = await fetch(sourceUrl);
@@ -29,7 +29,6 @@ async function createLayer(sourceUrl, color) {
                 address: feature.properties.address
             });
 
-            // Thêm text label hiển thị tên cửa hàng
             marker.setStyle(new ol.style.Style({
                 image: new ol.style.Circle({
                     radius: 6,
@@ -61,7 +60,7 @@ async function createLayer(sourceUrl, color) {
 }
 
 
-// Quản lý các lớp bản đồ
+
 const layers = {};
 
 const WFS = (workspace, layer) =>
@@ -72,7 +71,7 @@ Promise.all([
     createLayer(WFS('myproject', 'lotte'), 'blue').then(layer => layers.lotte = layer),
     createLayer(WFS('myproject', 'jollibee'), 'orange').then(layer => layers.jollibee = layer)
 ]).then(() => {
-    // Gán sự kiện cho checkbox sau khi các layer đã được tạo
+   
     document.getElementById("kfc-layer").addEventListener("change", (e) => {
         if (layers.kfc) layers.kfc.setVisible(e.target.checked);
     });
@@ -84,7 +83,6 @@ Promise.all([
     });
 });
 
-//Hiển thị popup khi click vào điểm
 const popup = document.getElementById("popup");
 const overlay = new ol.Overlay({ element: popup, positioning: 'bottom-center', stopEvent: false });
 map.addOverlay(overlay);
@@ -100,7 +98,6 @@ map.on('click', event => {
     if (!featureFound) popup.style.display = 'none';
 });
 
-// Hiển thị tọa độ khi di chuột
 const coordinateDisplay = document.createElement("div");
 coordinateDisplay.id = "coordinateDisplay";
 coordinateDisplay.style.cssText = "position:absolute;bottom:10px;left:10px;padding:5px 10px;background:rgba(0,0,0,0.7);color:#fff;border-radius:5px;font-size:12px;";
@@ -111,7 +108,6 @@ map.on('pointermove', event => {
     coordinateDisplay.innerHTML = `Tọa độ: ${coord[1].toFixed(6)}, ${coord[0].toFixed(6)}`;
 });
 
-// Tải dữ liệu tìm kiếm
 let allDatas = [];
 async function fetchAllData() {
     let urls = [
